@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Ресторан "La Dolce Vita"</title>
+    <!-- Предзагрузка -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" as="script">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Прелоадер -->
+    <div class="preloader" id="preloader">
+        <div class="preloader__spinner"></div>
+        <div class="preloader__text">La Dolce Vita</div>
+    </div>
+
+    <!-- Переключатель темы -->
+    <div class="theme-switcher">
+        <button id="themeToggle" aria-label="Переключить тему">
+            <i class="fas fa-sun" aria-hidden="true"></i>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <!-- Индикатор прокрутки -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">La Dolce Vita</a>
+            <nav class="nav" aria-label="Основная навигация">
+                <ul class="nav__list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="menu.html">Меню</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="team.html">Команда</a></li>
+                    <li><a href="testimonials.html">Отзывы</a></li>
+                    <li><a href="contact.html" class="active">Контакты</a></li>
+                    <li><a href="booking.html">Бронирование</a></li>
+                </ul>
+            </nav>
+            <button class="burger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Новый красивый заголовок -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Контакты</h1>
+                <p>Всегда рады видеть вас! Свяжитесь с нами любым удобным способом</p>
+                <div class="header-decoration"></div>
+            </div>
+        </section>
+
+        <!-- Контактная информация и форма -->
+        <section class="contact-page section">
+            <div class="container">
+                <div class="contact__grid">
+                    <!-- Левая колонка: информация -->
+                    <div class="contact__info reveal">
+                        <h2 class="section-title">Как нас найти</h2>
+                        <div class="info-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Адрес</h3>
+                                <p>г. Москва, ул. Тверская, 15</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h3>Телефон</h3>
+                                <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p><a href="mailto:info@tasty-life.ru">info@tasty-life.ru</a></p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Часы работы</h3>
+                                <p>Пн-Вс: 12:00 – 00:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Правая колонка: форма обратной связи -->
+                    <div class="contact__form reveal">
+                        <h2 class="section-title">Остались вопросы?</h2>
+                        <p>Напишите нам, и мы ответим в ближайшее время</p>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="Ваше имя" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-phone-alt"></i>
+                                <input type="tel" placeholder="Телефон" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-comment"></i>
+                                <textarea placeholder="Сообщение" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--large">Отправить сообщение</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Карта -->
+                <div class="contact__map reveal" data-tilt>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.683427345574!2d37.6155913159535!3d55.75921998055287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a738fa419%3A0x7c347d50b3f8d9c6!2z0J3QuNC60L7Qu9GM0YHQutCw0Y8g0YPQu9C40YbQsCwgMTUsINCc0L7RgdC60LLQsCwgMTI1MDA5!5e0!3m2!1sru!2sru!4v1620000000000!5m2!1sru!2sru" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__col reveal">
+                <h3>Ресторан "La Dolce Vita"</h3>
+                <p>Изысканная кухня в центре Москвы</p>
+            </div>
+            <div class="footer__col reveal">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="menu.html">Меню</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer__col reveal">
+                <h3>Контакты</h3>
+                <p>Тверская ул., 15<br>+7 (495) 123-45-67<br>info@tasty-life.ru</p>
+            </div>
+            <div class="footer__col reveal">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram-plane" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom reveal">
+            <p>&copy; 2026 Ресторан "La Dolce Vita". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Контейнер для уведомлений -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Скрипты -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

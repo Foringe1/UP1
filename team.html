@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команда - Ресторан "La Dolce Vita"</title>
+    <!-- Предзагрузка -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" as="script">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Прелоадер -->
+    <div class="preloader" id="preloader">
+        <div class="preloader__spinner"></div>
+        <div class="preloader__text">La Dolce Vita</div>
+    </div>
+
+    <!-- Переключатель темы -->
+    <div class="theme-switcher">
+        <button id="themeToggle" aria-label="Переключить тему">
+            <i class="fas fa-sun" aria-hidden="true"></i>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <!-- Индикатор прокрутки -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">La Dolce Vita</a>
+            <nav class="nav" aria-label="Основная навигация">
+                <ul class="nav__list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="menu.html">Меню</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="team.html" class="active">Команда</a></li>
+                    <li><a href="testimonials.html">Отзывы</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="booking.html">Бронирование</a></li>
+                </ul>
+            </nav>
+            <button class="burger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Новый заголовок -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Наша команда</h1>
+                <p>Профессионалы, которые делают ваш отдых незабываемым</p>
+                <div class="header-decoration"></div>
+            </div>
+        </section>
+
+        <section class="team-page section">
+            <div class="container">
+                <h2 class="section-title text-center reveal">Знакомьтесь, наши профессионалы</h2>
+                <div class="team__grid">
+                    <div class="team-member reveal" data-tilt>
+                        <div class="team-member__avatar">
+                            <img src="images/chef.jpg" alt="Гордон Рамзи" loading="lazy" decoding="async" width="140" height="140">
+                        </div>
+                        <h3>Гордон Рамзи</h3>
+                        <p class="team-member__role">Шеф-повар</p>
+                        <p class="team-member__bio">20 лет опыта, работал в мишленовских ресторанах Италии и Франции.</p>
+                        <div class="team-member__social">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="VK"><i class="fab fa-vk" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member reveal" data-tilt>
+                        <div class="team-member__avatar">
+                            <img src="images/souschef.jpg" alt="Константин Ивлев" loading="lazy" decoding="async" width="140" height="140">
+                        </div>
+                        <h3>Константин Ивлев</h3>
+                        <p class="team-member__role">Су-шеф</p>
+                        <p class="team-member__bio">Специалист по европейской кухне, победитель кулинарных конкурсов.</p>
+                        <div class="team-member__social">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="VK"><i class="fab fa-vk" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member reveal" data-tilt>
+                        <div class="team-member__avatar">
+                            <img src="images/manager.jpg" alt="Дмитрий Нагиев" loading="lazy" decoding="async" width="140" height="140">
+                        </div>
+                        <h3>Дмитрий Нагиев</h3>
+                        <p class="team-member__role">Управляющий</p>
+                        <p class="team-member__bio">Обеспечивает безупречный сервис и комфорт гостей.</p>
+                        <div class="team-member__social">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="VK"><i class="fab fa-vk" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member reveal" data-tilt>
+                        <div class="team-member__avatar">
+                            <img src="images/sommelier.jpg" alt="Лука Чангретта" loading="lazy" decoding="async" width="140" height="140">
+                        </div>
+                        <h3>Лука Чангретта</h3>
+                        <p class="team-member__role">Сомелье</p>
+                        <p class="team-member__bio">Поможет подобрать идеальное вино к вашему ужину.</p>
+                        <div class="team-member__social">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="VK"><i class="fab fa-vk" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member reveal" data-tilt>
+                        <div class="team-member__avatar">
+                            <img src="images/pastry.jpg" alt="Ренат Агзамов" loading="lazy" decoding="async" width="140" height="140">
+                        </div>
+                        <h3>Ренат Агзамов</h3>
+                        <p class="team-member__role">Кондитер</p>
+                        <p class="team-member__bio">Создаёт невероятные десерты и торты на заказ.</p>
+                        <div class="team-member__social">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="VK"><i class="fab fa-vk" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member reveal" data-tilt>
+                        <div class="team-member__avatar">
+                            <img src="images/bartender.jpg" alt="Дмитрий Петров" loading="lazy" decoding="async" width="140" height="140">
+                        </div>
+                        <h3>Дмитрий Петров</h3>
+                        <p class="team-member__role">Бармен</p>
+                        <p class="team-member__bio">Мастер авторских коктейлей, призёр международных конкурсов.</p>
+                        <div class="team-member__social">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="VK"><i class="fab fa-vk" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__col reveal">
+                <h3>Ресторан "La Dolce Vita"</h3>
+                <p>Изысканная кухня в центре Москвы</p>
+            </div>
+            <div class="footer__col reveal">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="menu.html">Меню</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer__col reveal">
+                <h3>Контакты</h3>
+                <p>Тверская ул., 15<br>+7 (495) 123-45-67<br>info@tasty-life.ru</p>
+            </div>
+            <div class="footer__col reveal">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram-plane" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom reveal">
+            <p>&copy; 2026 Ресторан "La Dolce Vita". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Контейнер для уведомлений -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Скрипты -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
